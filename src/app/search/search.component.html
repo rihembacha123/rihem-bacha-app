@@ -1,0 +1,19 @@
+<div class="container">
+<div class="search">
+  <input style="width: 40%;font-size: medium;height: 25px" [(ngModel)]="searchQuery" (input)="onSearchChange(searchQuery)" placeholder="Search GitHub Users" />
+</div>
+
+<div *ngIf="users.length > 0">
+  <h3>Results:</h3>
+  <div class="cards-container">
+    <div class="user-card" *ngFor="let user of users" (click)="showUserDetails(user)">
+      <img [src]="user.avatar_url" alt="{{user.login}}" class="user-avatar" />
+      <p>{{ user.login }}</p>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="users.length === 0 && searchQuery.length > 0">
+  <p>No users found for "{{ searchQuery }}"</p>
+</div>
+</div>

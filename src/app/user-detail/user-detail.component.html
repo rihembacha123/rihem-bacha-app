@@ -1,0 +1,15 @@
+<div class="container">
+<div *ngIf="userDetails" class="card">
+  <div>
+  <h2>{{ userDetails.name }}</h2>
+    <img [src]="userDetails.avatar_url" alt="{{userDetails.login}}" width="100" height="100" /></div>
+  <div>
+  <p><strong>Username:</strong> {{ userDetails.login }}</p>
+  <p><strong>Location:</strong> {{ userDetails.location }}</p>
+  <p><strong>Public Repos:</strong> {{ userDetails.public_repos }}</p>
+  <p><strong>Followers:</strong> {{ userDetails.followers }}</p>
+  <p><strong>Following:</strong> {{ userDetails.following }}</p>
+  <a [href]="userDetails.html_url" target="_blank">View Profile on GitHub</a>
+  </div>
+</div>
+</div>
